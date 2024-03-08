@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Butchery{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body id="login">
+
+{% block content %}
+<div class="login_form" style="margin-top:20px;">
+        <div class="loginlogo">
+            <img src="{% static 'images\logo.jpg' %}" alt="Logo">
+        </div>
+        <div id="login_form">
+            <h2>Login</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username"><br>
+                <input type="password" name="password" placeholder="Password"><br>
+                <button class="logout_btn" type="submit">Login</button>
+            </form>
+            No account? <a href="/register_admin"> <br><strong>Register Here</strong></a>!
+        </div>
+</div>
+{% endblock %}
+
+<footer>
+    <div class="">
+    <p>&copy; 2024 Butchery</p>
+</div>
+</footer>
+</body>
+</html>
+
+
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+    </form>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

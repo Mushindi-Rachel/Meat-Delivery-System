@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Butchery{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="socials">
+        <img src="{% static 'images\fb.png'%}">
+        <img src="{% static 'images\instagram.png'%}">
+        <img src="{% static 'images\tiktok.png'%}">
+        <img src="{% static 'images\tweet.png'%}">
+    </div>
+    <!-- Common header -->
+    <header>
+        <nav class="navbar">
+            <img id="logo"src="{% static 'images/logo.jpg' %}" alt="Logo">
+        <!-- Add navigation menu -->
+            <div>
+              <a href="{% url 'order_list' %}">Orders</a>
+            </div>
+            <div class="navbar_btn">
+                <a href="{% url 'admin_login'%}"><button class="login_form_btn" type="submit">Logout</button></a>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="sidenav">
+            <div class="sidenav">
+                
+        </div>
+
+    </main>
+
+    <div id="content">
+        {%block content%}
+
+        {%endblock%}
+    </div>
+   
+    
+    <!-- Common footer -->
+   {% comment %} <footer>
+        <div class="footer">
+        <p>&copy; 2024 Butchery</p>
+        <div class="socials">
+            <a href="https://m.facebook.com/login/s"><img src="{% static 'images\fb.png'%}"></a>
+            <a href="https://www.instagram.com/accounts/login/"><img src="{% static 'images\instagram.png'%}"></a>
+            <a href=""><img src="{% static 'images\tiktok.png'%}"></a>
+            <a href=""><img src="{% static 'images\tweet.png'%}"></a>
+        </div> 
+    </div>
+    </footer>  {% endcomment %}
+</body>
+</html>
